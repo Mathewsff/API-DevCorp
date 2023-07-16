@@ -1,0 +1,587 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Sample Application Flow OAuth2 Project",
+    "description": "This is an example of using OAuth2 Application Flow in a specification to describe security to your API.",
+    "version": "1.0.0-oas3"
+  },
+  "servers": [
+    {
+      "url": "https://virtserver.swaggerhub.com/MATHEWSREIS_1/SBC/1.0.0",
+      "description": "SwaggerHub API Auto Mocking"
+    }
+  ],
+  "paths": {
+    "/Evento/cadastraEvento": {
+      "post": {
+        "summary": "Cadastro de Evento",
+        "description": "O Administrador cadastra um novo evento no sistema.",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Evento/removeEvento": {
+      "delete": {
+        "summary": "Remover Evento",
+        "description": "O Administrador remove um evento no sistema.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "$ref": "#/components/schemas/Evento"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Evento/editEvento": {
+      "put": {
+        "summary": "Editar Evento",
+        "description": "O Administrador edita um evento no sistema.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "$ref": "#/components/schemas/Evento"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Evento/cadastraEdicaoEvento": {
+      "post": {
+        "summary": "Cadastro de Edição",
+        "description": "O Administrador cadastra uma nova edição de um evento já adicianado no sistema.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "$ref": "#/components/schemas/Evento"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Evento/removeEdicao": {
+      "delete": {
+        "summary": "Remoção de Edição",
+        "description": "O Administrador remove uma edição de um evento já adicianado no sistema.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "$ref": "#/components/schemas/Evento"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Evento/editEdicao": {
+      "put": {
+        "summary": "Remoção de Edição",
+        "description": "O Administrador edita uma edição de um evento já adicianado no sistema.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "$ref": "#/components/schemas/Evento"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Evento/configuraOrganizador": {
+      "post": {
+        "summary": "Cadastro de Organizador",
+        "description": "O Administrador configura um usuário como\n  organizador responsável por uma edição do evento.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "$ref": "#/components/schemas/Evento"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Espaco/cadastroEspaco": {
+      "post": {
+        "summary": "Cadastro de Espaço",
+        "description": "O Organizador cadastra os espaços (salas, auditórios,\n  etc) disponíveis para a realização de sessões do\n  evento.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "$ref": "#/components/schemas/Espaco"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Espaco/removeEspaco": {
+      "delete": {
+        "summary": "Remoção de Espaço",
+        "description": "O Organizador remove os espaços (salas, auditórios,\n  etc) disponíveis para a realização de sessões do\n  evento.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "$ref": "#/components/schemas/Evento"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Espaco/editEspaco": {
+      "put": {
+        "summary": "Edição de Espaço",
+        "description": "O Organizador edita os espaços (salas, auditórios,\n  etc) disponíveis para a realização de sessões do\n  evento.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "$ref": "#/components/schemas/Evento"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Evento/Atividade/cadastroAtividade": {
+      "post": {
+        "summary": "Cadastro de Atividades",
+        "description": "O Organizador cadastra atividades (sessões) que\n  compõem o evento.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "$ref": "#/components/schemas/Evento"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Evento/Atividade/removeAtividade": {
+      "delete": {
+        "summary": "Remoção de Atividades",
+        "description": "O Organizador remove atividades (sessões) que\n  compõem o evento.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "$ref": "#/components/schemas/Atividade"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Evento/AtividadeeditAtividade": {
+      "put": {
+        "summary": "Edição de Atividades",
+        "description": "O Organizador edita atividades (sessões) que\n  compõem o evento.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "$ref": "#/components/schemas/Atividade"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Usuario/cadastroSistema": {
+      "post": {
+        "summary": "Cadastro de Usuários",
+        "description": "O usuário se cadastra no sistema.",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Evento/editDadosEvento": {
+      "put": {
+        "summary": "Edição de Dados de um Evento",
+        "description": "O Organizador edita as principais informações\n  sobre a edição do evento.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "$ref": "#/components/schemas/Evento"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Evento/visualizaPagina": {
+      "get": {
+        "summary": "Visualizar Página do Evento",
+        "description": "O usuário visualiza site do evento.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "$ref": "#/components/schemas/Evento"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Evento/Atividades/visualizaDetalhamento": {
+      "get": {
+        "summary": "Visualizar Detalhamento da Atividade",
+        "description": "O usuário visualiza detalhes sobre uma atividade no\n site do evento.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "$ref": "#/components/schemas/Atividade"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Evento/Atividades/fav": {
+      "post": {
+        "summary": "Favoritar uma Atividade",
+        "description": "O usuário marca uma atividade no site do evento\n como favorita.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "$ref": "#/components/schemas/Atividade"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Usuario/ping": {
+      "get": {
+        "summary": "Notificar Usuário",
+        "description": "O sistema notifica o Usuário sobre suas atividades favoritas",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "$ref": "#/components/schemas/Atividade"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Evento": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "nome": {
+            "type": "string",
+            "format": "string"
+          },
+          "sigla": {
+            "type": "string",
+            "format": "string"
+          },
+          "descricao": {
+            "type": "string",
+            "format": "string"
+          }
+        }
+      },
+      "Espaco": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "nome": {
+            "type": "string",
+            "format": "string"
+          },
+          "localizacao": {
+            "type": "string",
+            "format": "string"
+          },
+          "capacidade": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "recursos": {
+            "type": "string",
+            "format": "string[]"
+          }
+        }
+      },
+      "Edicao": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "numero": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ano": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "data_inicial": {
+            "type": "string",
+            "format": "date"
+          },
+          "data_final": {
+            "type": "string",
+            "format": "date"
+          },
+          "cidade": {
+            "type": "string",
+            "format": "string"
+          },
+          "evento": {
+            "$ref": "#/components/schemas/Evento"
+          },
+          "organizador": {
+            "$ref": "#/components/schemas/Usuario"
+          },
+          "atividades": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Atividade"
+            }
+          }
+        }
+      },
+      "Atividade": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "nome": {
+            "type": "string",
+            "format": "string"
+          },
+          "tipo": {
+            "type": "number",
+            "format": "number"
+          },
+          "descricao": {
+            "type": "string",
+            "format": "string"
+          },
+          "data": {
+            "type": "string",
+            "format": "date"
+          },
+          "horario_inicial": {
+            "type": "string",
+            "format": "time"
+          },
+          "horario_final": {
+            "type": "string",
+            "format": "time"
+          },
+          "local": {
+            "$ref": "#/components/schemas/Espaco"
+          }
+        }
+      },
+      "Usuario": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "login": {
+            "type": "string",
+            "format": "string"
+          },
+          "email": {
+            "type": "string",
+            "format": "string"
+          },
+          "nome": {
+            "type": "string",
+            "format": "string"
+          },
+          "afiliacao": {
+            "type": "string",
+            "format": "string"
+          },
+          "favoritos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Atividade"
+            }
+          }
+        }
+      }
+    }
+  }
+}
